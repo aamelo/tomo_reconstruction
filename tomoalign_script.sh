@@ -40,3 +40,4 @@ tomorec -a "$input_stack"_thin.par -i "$input_stack".ali -o "$input_stack"_corre
 ### STEP 5 ###
 ### Flip Y for Z of tomogram generated on STEP 4 ###
 clip flipyz "$input_stack"_corrected_tomogram.mrc "$input_stack"_corrected_tomogram_flipped.mrc;
+rm "$input_stack"_corrected_tomogram.mrc;
