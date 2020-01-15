@@ -36,3 +36,7 @@ tomoalign -a "$input_stack".tlt -i "$input_stack"_ali.fid.txt -o "$input_stack"_
 ### STEP 4 ###
 ### Calculate tomogram ###
 tomorec -a "$input_stack"_thin.par -i "$input_stack".ali -o "$input_stack"_corrected_tomogram.mrc -Y $starty,$endy -z $sizez -w hamming -W 0 -v 2;
+
+### STEP 5 ###
+### Flip Y for Z of tomogram generated on STEP 4 ###
+clip flipyz "$input_stack"_corrected_tomogram.mrc "$input_stack"_corrected_tomogram_flipped.mrc;
